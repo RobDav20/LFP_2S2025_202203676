@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'titulo1';
+  src: url('fuentes/Asimovian-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'titulo2';
+  src: url('fuentes/Viga-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

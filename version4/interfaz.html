@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analizador</title>
+
+  <style>
+    /* ---- DECLARACIÓN DE FUENTES ---- */
+    @font-face {
+      font-family: 'titulo1';
+      src: url('fuentes/Asimovian-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'titulo2';
+      src: url('fuentes/Viga-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ---- ESTILOS GENERALES ---- */
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-family: 'titulo1', sans-serif;
+      font-weight: normal;
+      font-size: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px 10px 10px 167px;
+      color: #f9f9f9;
+    }
+
+    h2 {
+      font-family: 'titulo2', sans-serif;
+      font-weight: bold;
+      position: absolute;
+      top: 29px;
+      left: 270px;
+      margin: 20px 20px 20px 150px;
+      font-size: 17px;
+      color: #ffffff;
+    }
+
+    p1 {
+      position: absolute;
+      bottom: 0;
+      right: 350px;
+      margin: 0px 20px 20px 40px;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    p2 {
+      position: absolute;
+      bottom: 0;
+      right: 334px;
+      margin: 0px 20px 20px 40px;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    p3 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 0px 20px 20px 40px;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    hr.Separa {
+      width: 1400px;
+      border: 60px;
+      height: 3px;
+      background-color: #00ffcc;
+      margin: 80px 0px 0px 135px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    div.Linea {
+      border-left: 3px solid #00ffcc;
+      height: 640px;
+      position: absolute;
+      left: 136px;
+      top: 105px;
+    }
+
+    /* Clase general para TODOS los botones */
+    .boton-general {
+      display: inline-block;
+      padding: 10px 14px;
+      background-color: black;
+      color: white;
+      border: 2px solid #00ffcc;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: absolute;
+      transform: rotate(0deg);
+      transform-origin: left top;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    /* Hover */
+    .boton-general:hover {
+      background-color: #00ffcc;
+      color: black;
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    /* Posiciones específicas */
+    #btn-analizar { top: 110px; left: 15px; }
+    #btn-cargar   { top: 262px; left: 23px; }
+    #btn-reporte  { top: 414px; left: 20px; }
+    #btn-bracket  { top: 576px; left: 19px; }
+
+    .separador-boton {
+      position: absolute;
+      left: 10px;
+      width: 120px;
+      height: 2px;
+      background-color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <!-- CORRECCIÓN: cierre h1 arreglado -->
+  <h1>/TJournes/</h1>
+  <h2>Analizador de Torneos</h2>
+  
+  <p1>Roberto Alexander Davila</p1>
+  <p2>/</p2>
+  <p3>3033664780108@ingenieria.usac.edu.gt</p3>
+
+  <hr class="Separa arriba">
+  <div class="Linea vertical"></div> <!-- espacio entre la linea y los botones-->
+
+  <!-- Botón Analizar Torneo (abre el explorador de archivos) -->
+  <input type="file" id="file" name="file" accept=".txt" hidden>
+  <label for="file" id="btn-analizar" class="boton-general">Analizar<br>Torneo</label>
+
+  <!-- separador horizontal -->
+  <div class="separador-boton" style="top: 200px;"></div>
+
+  <!-- Botón Cargar Archivo -->
+  <button id="btn-cargar" class="boton-general" type="button">Cargar<br>Archivo</button>
+
+  <!-- separador horizontal -->
+  <div class="separador-boton" style="top: 362px;"></div>
+
+  <!-- Botón Generar Reporte -->
+  <button id="btn-reporte" class="boton-general" type="button">Generar<br>Reporte</button>
+
+  <!-- separador horizontal -->
+  <div class="separador-boton" style="top: 524px;"></div>
+
+  <!-- Botón Mostrar Bracket -->
+  <button id="btn-bracket" class="boton-general" type="button">Mostrar<br>Bracket</button>
+
+  <!-- Área de resultados -->
+  <div id="resultado" style="margin: 120px 160px; color:white;"></div>
+
+  <!-- Scripts -->
+  <script src="analizis.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
